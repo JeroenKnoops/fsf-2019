@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Slide</title>
+    <style>*{margin:0;padding:0;box-sizing:border-box}#slide{display:none}.slide{white-space:nowrap}.slide-content{align-self:center}@media screen{body{position:absolute;top:50%;left:50%}.slide-4x3{width:1024px;height:768px;margin:-384px 0 0 -512px}.slide-16x9{width:1024px;height:576px;margin:-288px 0 0 -512px}.slide-16x10{width:1024px;height:640px;margin:-320px 0 0 -512px}.slide{position:absolute;width:100%;height:100%;display:flex;justify-content:center;overflow:hidden}}</style>
+    <style>@media print {
+	body { transform: none !important; }
+	h1 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; font-weight: 300; }
+	.slide-root { width: 100%; display: flex; flex-wrap: wrap; align-items: stretch; }
+	.slide-content { transform: none !important; }
+	.slide {
+		display: flex;
+		justify-content: center;
+		flex: 1;
+		padding: 0.5rem;
+		margin: 0.5rem 0.5rem 4rem 0.5rem;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		visibility: visible !important;
+	}
+}</style>
+    <style >@font-face { 
+  font-family: 'Lintel';
+  src: url(/static/fonts/Lintel_Reg-webfont.ttf) format('truetype'); 
+}
+@font-face { 
+  font-family: 'PrintChar';
+  src: url(/static/fonts/PrintChar21.ttf) format('truetype'); 
+}
+@font-face { 
+  font-family: 'PR';
+  src: url(/static/fonts/PRNumber3.ttf) format('truetype'); 
+}
+@font-face { 
+  font-family: 'Iosevka';
+  src: url(/static/fonts/iosevka-regular.ttf) format('truetype'); 
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #EFEFEF;
+  color: #222;
+  text-shadow: .2px .2px #eecccc;
+}
+p {
+  text-align: center;
+  font-family: Lintel;
+}
+.slide {
+  background-size: cover;
+}
+.slide strong {
+  color: purple;
+}
+.slide h1 {
+  text-align: center;
+  font-family: Lintel;
+  font-weight: 400;
+  font-size: 2.6rem;
+}
+.slide h2 {
+  text-align: center;
+  font-family: Lintel;
+  font-weight: 300;
+  font-size: 2.4rem;
+}
+.slide h6 {
+  text-align: center;
+  font-family: Lintel;
+  font-size: 0.5rem;
+}
+.slide pre {
+  font-family: Iosevka;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.slide-2 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-3 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-7 {
+  background-color: #ff9400;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+
+.slide-8 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-9 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-16 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-17 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-22 {
+background: url("/static//images/apple2.jpg");
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+}
+
+.slide-23 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-24 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-30 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-31 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-39 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-40 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-50 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-51 {
+  background-color: #00cc94;
+  color: white;
+  text-shadow: .2px .2px #442222;
+}
+
+.slide-56 {
+  background-color: #cc9400;
+  color: white;
+  text-shadow: .3px .3px #442222;
+}
+
+.slide-56 h2 {
+  text-align: left;
+}
+
+.slide-57 {
+  background-color: #cc9400;
+  color: white;
+  text-shadow: .3px .3px #442222;
+}
+
+.slide-57 h2 {
+  text-align: left;
+}
+
+.slide-58 {
+  background-color: #cc9400;
+  color: white;
+  text-shadow: .3px .3px #442222;
+}
+
+.slide-58 h2 {
+  text-align: left;
+}
+
+.slide-59 {
+  background-color: #cc9400;
+  color: white;
+  text-shadow: .3px .3px #442222;
+}
+
+.slide-59 h2 {
+  text-align: left;
+}
+
+.slide-60 {
+  background-color: #cc9400;
+  color: white;
+  text-shadow: .3px .3px #442222;
+}
+
+.slide-60 h2 {
+  text-align: left;
+}
+
+.slide-61 {
+  background-color: #cc9400;
+  color: white;
+  text-shadow: .3px .3px #442222;
+}
+
+.slide-61 h2 {
+  text-align: left;
+}
+
+.slide-62 {
+  background-color: #cc9400;
+  color: white;
+  text-shadow: .3px .3px #442222;
+}
+
+.slide-62 h2 {
+  text-align: left;
+}
+</style>
+    <script>
+      function resize() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var bw = document.body.offsetWidth;
+        var bh = document.body.offsetHeight;
+        var scale = ((w/h < bw/bh) ? w/bw : h/bh);
+        document.body.style.transform = 'scale(' + scale + ')';
+      }
+
+      var currentSlide = -1;
+
+      function goTo(slideIndex) {
+        currentSlide = slideIndex;
+        window.location.hash = slideIndex;
+        var slides = document.querySelectorAll('.slide');
+        for (var i = 0; i < slides.length; i++) {
+          var el = slides[i];
+          var slide = el.children[0];
+          var scaleWidth = (el.offsetWidth * 0.8 / slide.offsetWidth);
+          var scaleHeight = (el.offsetHeight * 0.8 / slide.offsetHeight);
+          slide.style.transform = 'scale(' + Math.min(scaleWidth, scaleHeight) + ')';
+          if (i == currentSlide) {
+            el.style.visibility = '';
+          } else {
+            el.style.visibility = 'hidden';
+          }
+        }
+
+        document.getElementsByTagName("body")[0].className = "slide-16x9";
+
+        var leaveEvt = new Event("slideLeave_"+slideIndex-1)
+        window.dispatchEvent(leaveEvt)
+
+        var evt = new Event("slideEnter_"+slideIndex)
+        window.dispatchEvent(evt)
+      }
+
+      function next() {
+        goTo(Math.min(currentSlide + 1, document.querySelectorAll('.slide').length - 1));
+      }
+
+      function prev() {
+        goTo(Math.max(currentSlide - 1, 0));
+      }
+
+      window.onload = function() {
+        resize();
+        var tmpSlideFromHash = parseInt(window.location.hash.substring(1)||0, 10)
+        goTo(tmpSlideFromHash);
+        window.onclick = next;
+        window.onresize = resize;
+        window.onkeydown = function(e) {
+          if (e.keyCode == 39) {
+            next();
+          } else if (e.keyCode == 37) {
+            prev();
+          }
+        };
+      };
+    </script>
+  </head>
+  <body class="slide-16x9">
+    <div class="slide-root">
+      
+		<div class="slide slide-0" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Hey</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-1" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2012 - 2018</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-2" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2012</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-3" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2012-09-08 - 2012-09-09</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-4" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Zed shaw</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-5" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Paolo</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-6" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Gary Bernhardt</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-7" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Untappd</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-8" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2013</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-9" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2013-09-14 - 2013-09-15</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-10" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Mats</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-11" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Sandi metz</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-12" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Sandi meter</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-13" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Astronaut</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-14" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Tenderlove</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-15" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Avdi</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-16" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2014</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-17" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2014-09-11 - 2014-09-13</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-18" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Leon Gersing</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-19" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Tim Stuart</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-20" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Erik Michaels - Ober</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-21" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Mats</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-22" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h2> Beautiful slides</h2>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-23" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2015</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-24" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2015-09-01 - 2015-09-05</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-25" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Tom Dale</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-26" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Tenderlove</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-27" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Yahuda</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-28" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Mats</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-29" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Snadi Metz</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-30" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2016</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-31" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2016-09-05 - 2016-09-05</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-32" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Best soundtrack ever</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-33" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Juan Benet</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-34" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Lee Byron</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-35" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Unikernels</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-36" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Ben Smith</h1>
+	
+		<h2> WebAssembly</h2>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-37" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h2> Make webassembly great again</h2>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-38" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> AlphaGo</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-39" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2017</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-40" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2017-09-04 - 2017-09-08</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-41" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Steve Kinney</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-42" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h2> Ethereum</h2>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-43" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Luca Marchesini</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-44" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h2> Decentralized networks</h2>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-45" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Nikita Baksalyar</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-46" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Gone in 60 ms</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-47" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Rich Jones</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-48" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Terraform</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-49" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> React Native</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-50" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2018</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-51" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> 2018-09-03 - 2018-09-08</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-52" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Avoiding Digital Bias</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-53" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Building a Modern Memex</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-54" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Do you need a Service Mesh</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-55" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Beaker Browser</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-56" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Single track</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-57" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Presentation style</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-58" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> IPFS</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-59" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> GraphQL</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-60" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> React</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-61" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> s8s</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-62" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> k8s</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-63" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Me</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-64" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Thanks</h1>
+	
+		</div>
+		</div>
+	
+		<div class="slide slide-65" style="visibility: hidden;">
+		<div class="slide-content">
+	
+		<h1> Codegram</h1>
+	
+		</div>
+		</div>
+	
+    </div>
+    <div>
+        
+    </div>
+  </body>
+</html>
+
